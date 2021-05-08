@@ -7,19 +7,19 @@
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav mr-auto">
                 <li class="nav-item active">
-                    <a class="nav-link" routerLink="">Home</a>
+                    <a class="nav-link" routerLink="" *ngIf="hardcodedAuthenticationService.isUserLoggedIn()">Home</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" routerLink="/todo">Todos</a>
+                    <a class="nav-link" routerLink="/todo" *ngIf="hardcodedAuthenticationService.isUserLoggedIn()">Todos</a>
                 </li>
             </ul>
 
             <ul class="navbar-nav navbar-collapse justify-content-end">
                 <li class="nav-item">
-                    <a class="nav-link" routerLink="/login">Login</a>
+                    <a class="nav-link" routerLink="/login" *ngIf="!hardcodedAuthenticationService.isUserLoggedIn()">Login</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" routerLink="/logout">Logout</a>
+                    <a class="nav-link" routerLink="/logout" *ngIf="hardcodedAuthenticationService.isUserLoggedIn()">Logout</a>
                 </li>
             </ul>
         </div>
