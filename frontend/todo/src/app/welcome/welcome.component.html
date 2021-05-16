@@ -2,4 +2,11 @@
 <div class="container">
     You can go now view into your todo list <a routerLink="/todo">here</a>
 </div>
+<div class="container">
+    You can click here for a surprise
+    <button class="btn btn-primary" (click)="getWelcomeMessageWithParam()">Click</button>
+</div>
 
+<div class="container">
+    <h4>Message from HTTP</h4> - {{welcomeMessage}}
+</div>
